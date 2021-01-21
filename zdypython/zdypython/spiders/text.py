@@ -12,7 +12,7 @@ import re,os
 class ShopifSpider(scrapy.Spider):
     name = 'text'
     allowed_domains = ['biduo.cc']
-    start_urls = ['https://www.biduo.cc/biquge/0_598/c46466.html']
+    start_urls = ['https://www.biduo.cc/biquge/39_39996/c13571637.html']
 
     def parse(self, response):
         #获取文章标题
@@ -28,7 +28,7 @@ class ShopifSpider(scrapy.Spider):
         # 获取当前文件位置
         yth = os.getcwd()
         # 打开追加文件
-        flie = open(yth + '/all/我娘子天下第一.txt', 'a', encoding='utf-8')
+        flie = open(yth + '/all/彪悍的人生.txt', 'a', encoding='utf-8')
         # 填写追加内容
         flie.write(title + '\n\n\t' + content + '\n\n')
         # 关闭文件
