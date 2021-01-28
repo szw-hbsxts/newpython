@@ -20,6 +20,6 @@ def get_ip_info(ip):
     ip_info['经度']=res.location.longitude
     ip_info['纬度']=res.location.latitude
     return ip_info
-ip = '59.172.244.214'
+ip = '128.1.133.117'
 html = get_ip_info(ip)
 print(html)
