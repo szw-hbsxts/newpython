@@ -5,8 +5,8 @@ import re
 
 class ShopifSpider(scrapy.Spider):
     name = 'shopif'
-    allowed_domains = ['phicul.com']
-    start_urls = ['https://www.phicul.com/collections/all']
+    allowed_domains = ['chaogadget.com']
+    start_urls = ['https://www.chaogadget.com/collections/all']
     cp_id = 215
     url = []
     page = 2

@@ -11,8 +11,8 @@ import re,os
 
 class ShopifSpider(scrapy.Spider):
     name = 'text'
-    allowed_domains = ['biduo.cc']
-    start_urls = ['https://www.biduo.cc/biquge/39_39996/c13571637.html']
+    allowed_domains = ['biquduo.com']
+    start_urls = ['https://www.biquduo.com/biquge/40_40049/c13635293.html']
 
     def parse(self, response):
         #获取文章标题
@@ -28,20 +28,20 @@ class ShopifSpider(scrapy.Spider):
         # 获取当前文件位置
         yth = os.getcwd()
         # 打开追加文件
-        flie = open(yth + '/all/彪悍的人生.txt', 'a', encoding='utf-8')
+        flie = open(yth + '/all/老衲要还俗.txt', 'a', encoding='utf-8')
         # 填写追加内容
         flie.write(title + '\n\n\t' + content + '\n\n')
         # 关闭文件
         flie.close()
         # 获取下一页地址
-        next = response.xpath(".//*[@class='bottem1']/a")
+        next = response.xpath(".//*[@class='bottem2']/a")
         for i in next:
             name = i.xpath("text()").extract_first()
             if name == '下一章':
                 href = i.xpath("@href").extract_first()
-                print(href)
                 # 提交下一页
                 yield response.follow(href, self.parse)
+
 
 
 
